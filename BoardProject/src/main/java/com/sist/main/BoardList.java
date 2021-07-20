@@ -74,6 +74,16 @@ public class BoardList extends HttpServlet {
 		out.println("<div class=container>");
 		out.println("<div class=row>");
 		out.println("<h1 class=text-center>자유게시판</h1>");
+		out.println("<div style=\"height:30px\"></div>");
+		out.println("<table class=table>");
+		out.println("<tr>");// row => 한줄만들기 
+		out.println("<td>");
+		// td=> 데이터값을 출력 => 제목은 th , 실제 데이터는 td
+		out.println("<a href=BoardInsert class=\"btn btn-sm btn-info\">새글</a>");
+		// a => 링크 (클릭시 화면이동) 
+		out.println("</td>");
+		out.println("</tr>");
+		out.println("</table>");
 		out.println("<table class=table>");
 		out.println("<tr class=danger>");// info , danger , warning , 
 		out.println("<th width=10% class=text-center>번호</th>");
@@ -106,6 +116,16 @@ public class BoardList extends HttpServlet {
 		out.println("</table>");
 		out.println("<table class=table>");
 		out.println("<tr>");
+		out.println("<td class=text-left>");
+		out.println("Search:");
+		out.println("<select name=fs class=input-sm>");
+		out.println("<option value=name>이름</option>");
+		out.println("<option value=subject>제목</option>");
+		out.println("<option value=content>내용</option>");
+		out.println("</select>");
+		out.println("<input type=text name=ss size=10 class=input-sm>");
+		out.println("<input type=submit value=검색 class=\"btn btn-sm btn-success\">");
+		out.println("</td>");
 		out.println("<td class=text-right>");
 		out.println("<a href=BoardList?page="+(curpage>1?curpage-1:curpage)+" class=\"btn btn-lg btn-primary\">이전</a>");
 		out.println(curpage+" page / "+totalpage+" pages");
